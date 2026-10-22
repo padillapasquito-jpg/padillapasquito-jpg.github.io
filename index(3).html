@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dionard Pasquito | BSIT Student &amp; Aspiring Web Developer</title>
+<meta name="description" content="Dionard Pasquito, third-year BSIT student. Studied C, C++, Python and C#. Now learning web development.">
+<meta property="og:title" content="Dionard Pasquito | BSIT Student &amp; Aspiring Web Developer">
+<meta property="og:description" content="Third-year BSIT student. Studied C, C++, Python and C#. Now learning web development.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700;800&family=DM+Sans:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add("js");</script>
+<style>
+  :root { --bg:#0a0f1c; --card:rgba(255,255,255,.045); --line:rgba(255,255,255,.11); --text:#e8edf7; --muted:#9aa6bd; --mint:#7be495; --cyan:#4cc9f0; --violet:#8b7cf6; }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; scroll-padding-top:5rem; }
+  body { margin:0; background:var(--bg); color:var(--text); font:400 1.05rem/1.7 "DM Sans",system-ui,sans-serif; overflow-x:hidden; }
+  h1,h2,h3 { font-family:Sora,"DM Sans",sans-serif; margin:0; line-height:1.1; }
+  a { color:var(--mint); }
+  a:focus-visible,button:focus-visible { outline:3px solid var(--cyan); outline-offset:3px; }
+  .wrap { max-width:1000px; margin:0 auto; padding:0 1.5rem; position:relative; z-index:1; }
+
+  /* background effects */
+  .blob { position:fixed; border-radius:50%; filter:blur(90px); opacity:.35; z-index:0; pointer-events:none; animation:float 18s ease-in-out infinite alternate; }
+  .b1 { width:420px; height:420px; background:var(--violet); top:-120px; left:-100px; }
+  .b2 { width:380px; height:380px; background:var(--cyan); bottom:-120px; right:-80px; animation-delay:-6s; }
+  .b3 { width:300px; height:300px; background:var(--mint); top:45%; left:55%; opacity:.18; animation-delay:-11s; }
+  @keyframes float { to { transform:translate(60px,-50px) scale(1.15); } }
+  .spot { position:fixed; inset:0; z-index:0; pointer-events:none; background:radial-gradient(500px circle at var(--mx,50%) var(--my,30%), rgba(123,228,149,.08), transparent 60%); }
+  .progress { position:fixed; top:0; left:0; height:3px; width:0; z-index:20; background:linear-gradient(90deg,var(--mint),var(--cyan),var(--violet)); }
+
+  /* nav */
+  .nav { position:fixed; top:0; left:0; right:0; z-index:10; backdrop-filter:blur(14px); background:rgba(10,15,28,.6); border-bottom:1px solid var(--line); }
+  .nav .wrap { display:flex; align-items:center; justify-content:space-between; padding-top:.8rem; padding-bottom:.8rem; flex-wrap:wrap; }
+  .logo { font:800 1.2rem Sora,sans-serif; color:var(--text); text-decoration:none; }
+  .logo span { color:var(--mint); }
+  .nav ul { display:flex; gap:.4rem; list-style:none; margin:0; padding:0; }
+  .nav li a { color:var(--muted); text-decoration:none; font-weight:500; font-size:.95rem; padding:.45rem .8rem; border-radius:99px; transition:color .2s, background .2s; display:block; }
+  .nav li a:hover, .nav li a.active { color:var(--text); background:rgba(255,255,255,.08); }
+  #menuBtn { display:none; background:var(--card); color:var(--text); border:1px solid var(--line); border-radius:8px; padding:.4rem .8rem; font:500 .95rem "DM Sans",sans-serif; cursor:pointer; }
+  @media (max-width:760px) {
+    #menuBtn { display:block; }
+    .nav ul { display:none; width:100%; flex-direction:column; padding:.6rem 0; }
+    .nav ul.open { display:flex; }
+  }
+
+  /* hero */
+  .hero { min-height:100vh; display:flex; flex-direction:column; justify-content:center; padding:7rem 0 3rem; }
+  .hi { font:500 1rem "JetBrains Mono",monospace; color:var(--mint); margin-bottom:1rem; }
+  h1 { font-size:clamp(2.8rem,9vw,6rem); font-weight:800; letter-spacing:-.035em; background:linear-gradient(100deg,#fff 10%,var(--mint) 40%,var(--cyan) 65%,var(--violet) 90%); background-size:220% auto; -webkit-background-clip:text; background-clip:text; color:transparent; animation:shine 7s linear infinite; }
+  @keyframes shine { to { background-position:220% center; } }
+  .role { font:500 clamp(1.1rem,3vw,1.5rem) "JetBrains Mono",monospace; margin:1.2rem 0 0; min-height:2em; }
+  .caret { display:inline-block; width:3px; height:1.1em; background:var(--mint); vertical-align:text-bottom; margin-left:3px; animation:blink 1s steps(1) infinite; }
+  @keyframes blink { 50% { opacity:0; } }
+  .lead { max-width:36rem; color:var(--muted); font-size:1.15rem; margin:1rem 0 1.8rem; }
+  .btns { display:flex; gap:.8rem; flex-wrap:wrap; }
+  .btn { position:relative; overflow:hidden; display:inline-block; padding:.8rem 1.5rem; border-radius:99px; font-weight:500; text-decoration:none; border:1px solid var(--line); color:var(--text); transition:transform .2s, box-shadow .2s; }
+  .btn.main { background:linear-gradient(100deg,var(--mint),var(--cyan)); color:#07101a; border:0; }
+  .btn:hover { transform:translateY(-3px); box-shadow:0 10px 30px -8px rgba(123,228,149,.5); }
+  .btn.main::after { content:""; position:absolute; top:0; left:-80%; width:50%; height:100%; background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent); transform:skewX(-20deg); }
+  .btn.main:hover::after { left:130%; transition:left .6s; }
+
+  .win { margin-top:3rem; border:1px solid var(--line); border-radius:14px; overflow:hidden; background:rgba(8,12,22,.8); box-shadow:0 30px 80px -30px rgba(76,201,240,.35); }
+  .win .top { display:flex; align-items:center; gap:.4rem; padding:.7rem 1rem; border-bottom:1px solid var(--line); background:rgba(255,255,255,.03); }
+  .dot { width:11px; height:11px; border-radius:50%; background:#ff5f57; }
+  .dot:nth-child(2) { background:#febc2e; } .dot:nth-child(3) { background:#28c840; }
+  .tabs { display:flex; gap:.3rem; margin-left:.8rem; overflow-x:auto; }
+  .tabs button { font:500 .85rem "JetBrains Mono",monospace; color:var(--muted); background:transparent; border:0; padding:.35rem .8rem; border-radius:6px; cursor:pointer; transition:background .2s,color .2s; }
+  .tabs button:hover { color:var(--text); }
+  .tabs button[aria-selected="true"] { background:rgba(123,228,149,.15); color:var(--mint); }
+  pre { margin:0; padding:1.2rem 1.4rem; overflow-x:auto; font:400 .95rem/1.7 "JetBrains Mono",monospace; color:#d7e2f5; }
+  .out { padding:.8rem 1.4rem; border-top:1px solid var(--line); font:400 .95rem "JetBrains Mono",monospace; color:var(--mint); }
+
+  /* marquee */
+  .marquee { overflow:hidden; border-block:1px solid var(--line); background:rgba(255,255,255,.02); padding:1rem 0; position:relative; z-index:1; }
+  .track { display:flex; gap:3rem; width:max-content; animation:scroll 24s linear infinite; font:800 1.6rem Sora,sans-serif; color:rgba(255,255,255,.28); }
+  .track span::after { content:"✦"; color:var(--mint); margin-left:3rem; font-size:1rem; }
+  @keyframes scroll { to { transform:translateX(-50%); } }
+
+  /* sections */
+  section { padding:6rem 0 1rem; }
+  .eyebrow { font:500 .9rem "JetBrains Mono",monospace; color:var(--mint); margin-bottom:.6rem; }
+  h2 { font-size:clamp(1.9rem,5vw,2.8rem); font-weight:800; letter-spacing:-.02em; margin-bottom:1.5rem; }
+  p { margin:0 0 1rem; }
+  .muted { color:var(--muted); }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:1.1rem; }
+  .card { position:relative; background:var(--card); border:1px solid var(--line); border-radius:16px; padding:1.5rem; overflow:hidden; transition:transform .25s ease, border-color .25s; transform:perspective(800px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)); }
+  .card::before { content:""; position:absolute; inset:0; background:radial-gradient(300px circle at var(--cx,50%) var(--cy,0%), rgba(123,228,149,.14), transparent 60%); opacity:0; transition:opacity .25s; pointer-events:none; }
+  .card:hover { border-color:rgba(123,228,149,.5); }
+  .card:hover::before { opacity:1; }
+  .card h3 { font-size:1.25rem; margin-bottom:.5rem; position:relative; }
+  .card p { color:var(--muted); margin:0; position:relative; }
+  .big { font:800 2.6rem Sora,sans-serif; color:var(--mint); margin-bottom:.2rem; position:relative; }
+  .chips { display:flex; flex-wrap:wrap; gap:.5rem; margin-top:1rem; position:relative; }
+  .chip { font:400 .82rem "JetBrains Mono",monospace; padding:.25rem .7rem; border-radius:99px; border:1px solid var(--line); background:rgba(255,255,255,.05); }
+  .proj { display:grid; grid-template-columns:1.3fr 1fr; gap:1.1rem; }
+  @media (max-width:760px) { .proj { grid-template-columns:1fr; } }
+  .soon { border-style:dashed; display:flex; flex-direction:column; justify-content:center; }
+  .contact { text-align:center; padding:2.5rem 1.5rem; }
+  .contact h3 { font-size:clamp(1.5rem,4vw,2.2rem); margin-bottom:1.2rem; }
+  footer { margin-top:5rem; border-top:1px solid var(--line); padding:1.8rem 0 3rem; color:var(--muted); font-size:.92rem; position:relative; z-index:1; }
+  footer .wrap { display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap; }
+  footer a { text-decoration:none; }
+
+  /* scroll reveal */
+  html.js .reveal { opacity:0; transform:translateY(28px); transition:opacity .8s ease, transform .8s ease; }
+  html.js .reveal.in { opacity:1; transform:none; }
+  .grid .reveal:nth-child(2) { transition-delay:.1s; } .grid .reveal:nth-child(3) { transition-delay:.2s; } .grid .reveal:nth-child(4) { transition-delay:.3s; }
+
+  @media (prefers-reduced-motion:reduce) {
+    *,*::before,*::after { animation:none !important; transition:none !important; }
+    html { scroll-behavior:auto; }
+    html.js .reveal { opacity:1; transform:none; }
+  }
+</style>
+</head>
+<body id="top">
+<div class="progress" id="progress"></div>
+<div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+<div class="spot"></div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top">dp<span>.</span></a>
+    <button id="menuBtn" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+    <ul id="menu">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <div class="wrap hero">
+    <div class="hi">&lt;hello_world /&gt;</div>
+    <h1>Dionard<br>Pasquito</h1>
+    <p class="role"><span id="role"></span><span class="caret"></span></p>
+    <p class="lead">Third-year BSIT student. I’ve written programs in four languages, and now I’m learning to build websites that anyone can open.</p>
+    <div class="btns">
+      <a class="btn main" href="#projects">View my work</a>
+      <a class="btn" href="#contact">Get in touch</a>
+      <!-- RESUME: put your PDF at assets/resume.pdf, then remove this comment.
+      <a class="btn" href="assets/resume.pdf" download>Download resume</a> -->
+    </div>
+    <div class="win">
+      <div class="top">
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        <div class="tabs" role="tablist" aria-label="Hello World in each language">
+          <button role="tab" aria-selected="true" data-lang="c">main.c</button>
+          <button role="tab" aria-selected="false" data-lang="cpp">main.cpp</button>
+          <button role="tab" aria-selected="false" data-lang="py">main.py</button>
+          <button role="tab" aria-selected="false" data-lang="cs">Program.cs</button>
+        </div>
+      </div>
+      <pre id="code" aria-live="polite"></pre>
+      <div class="out">$ Hello, world!</div>
+    </div>
+  </div>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="track" id="track"></div>
+  </div>
+
+  <div class="wrap">
+    <section id="about" class="reveal">
+      <div class="eyebrow">// about</div>
+      <h2>Learning by building.</h2>
+      <p class="muted" style="max-width:40rem">I’m studying Bachelor of Science in Information Technology and I’m now in my third year. In school I’ve worked with C, C++, Python and C#. Right now I’m picking up HTML, CSS and Git, and I use Linux Mint on my own laptop.</p>
+      <p class="muted" style="max-width:40rem">This website is my first web project. I’m looking for chances to learn through projects, OJT and internships.</p>
+    </section>
+
+    <section id="skills">
+      <div class="eyebrow reveal">// skills</div>
+      <h2 class="reveal">What I work with.</h2>
+      <div class="grid">
+        <div class="card tilt reveal"><div class="big">4</div><h3>Languages studied</h3><p>Coursework in each one.</p><div class="chips"><span class="chip">C</span><span class="chip">C++</span><span class="chip">Python</span><span class="chip">C#</span></div></div>
+        <div class="card tilt reveal"><div class="big">3</div><h3>Learning now</h3><p>Building my first sites.</p><div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">Git</span></div></div>
+        <div class="card tilt reveal"><div class="big">1</div><h3>Daily setup</h3><p>My own laptop, my own tools.</p><div class="chips"><span class="chip">Linux Mint</span><span class="chip">GitHub</span></div></div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="eyebrow reveal">// projects</div>
+      <h2 class="reveal">Things I’ve made.</h2>
+      <div class="proj">
+        <div class="card tilt reveal">
+          <h3>This portfolio website</h3>
+          <p>My first web project, written by hand and hosted for free on GitHub Pages. It has a live code window, a scroll animation and a mobile menu.</p>
+          <div class="chips"><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span></div>
+          <p style="margin-top:1.1rem"><a href="https://github.com/padillapasquito-jpg/padillapasquito-jpg.github.io">View the code →</a></p>
+        </div>
+        <div class="card soon reveal">
+          <h3>Next project</h3>
+          <p>School projects in C++, C# and Python will appear here as I finish them.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="reveal">
+      <div class="eyebrow">// education</div>
+      <h2>Where I study.</h2>
+      <div class="card">
+        <h3>Bachelor of Science in Information Technology</h3>
+        <p>Third year</p>
+        <!-- SCHOOL: add your school name and expected graduation year in a new <p> line here. -->
+      </div>
+    </section>
+
+    <section id="contact" class="reveal">
+      <div class="card contact">
+        <div class="eyebrow">// contact</div>
+        <h3>Let’s talk about the next project.</h3>
+        <div class="btns" style="justify-content:center">
+          <a class="btn main" href="https://github.com/padillapasquito-jpg">See my GitHub</a>
+          <!-- EMAIL: remove this comment and edit your email.
+          <a class="btn" href="mailto:your@email.com">Email me</a> -->
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Dionard Pasquito</span>
+    <a href="#top">Back to top ↑</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // Hello World tabs
+  var snippets = {
+    c: '#include <stdio.h>\n\nint main(void) {\n    printf("Hello, world!\\n");\n    return 0;\n}',
+    cpp: '#include <iostream>\n\nint main() {\n    std::cout << "Hello, world!" << std::endl;\n    return 0;\n}',
+    py: 'print("Hello, world!")',
+    cs: 'using System;\n\nclass Program {\n    static void Main() {\n        Console.WriteLine("Hello, world!");\n    }\n}'
+  };
+  var code = document.getElementById("code"), tabs = document.querySelectorAll(".tabs button");
+  function show(l) {
+    code.textContent = snippets[l];
+    tabs.forEach(function (t) { t.setAttribute("aria-selected", String(t.dataset.lang === l)); });
+  }
+  tabs.forEach(function (t) { t.addEventListener("click", function () { show(t.dataset.lang); }); });
+  show("c");
+
+  // Typing effect
+  var roles = ["BSIT Student", "Aspiring Web Developer", "Linux Mint User"], el = document.getElementById("role");
+  if (reduce) { el.textContent = roles[0]; }
+  else {
+    var ri = 0, ci = 0, del = false;
+    (function type() {
+      var w = roles[ri];
+      el.textContent = w.slice(0, ci);
+      if (!del && ci < w.length) { ci++; setTimeout(type, 70); }
+      else if (!del) { del = true; setTimeout(type, 1400); }
+      else if (ci > 0) { ci--; setTimeout(type, 35); }
+      else { del = false; ri = (ri + 1) % roles.length; setTimeout(type, 300); }
+    })();
+  }
+
+  // Marquee
+  var words = ["C", "C++", "Python", "C#", "HTML", "CSS", "Git", "Linux Mint"], html = "";
+  for (var k = 0; k < 4; k++) words.forEach(function (w) { html += "<span>" + w + "</span>"; });
+  document.getElementById("track").innerHTML = html;
+
+  // Mobile menu
+  var menu = document.getElementById("menu"), btn = document.getElementById("menuBtn");
+  btn.addEventListener("click", function () { btn.setAttribute("aria-expanded", String(menu.classList.toggle("open"))); });
+  menu.addEventListener("click", function (e) { if (e.target.tagName === "A") { menu.classList.remove("open"); btn.setAttribute("aria-expanded", "false"); } });
+
+  // Scroll reveal
+  var rev = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }); }, { threshold: .15 });
+    rev.forEach(function (r) { io.observe(r); });
+  } else { rev.forEach(function (r) { r.classList.add("in"); }); }
+
+  // Active nav link
+  var links = document.querySelectorAll(".nav li a"), secs = [];
+  links.forEach(function (a) { var s = document.querySelector(a.getAttribute("href")); if (s) secs.push([a, s]); });
+  function spy() {
+    var y = window.scrollY + 140, cur = null;
+    secs.forEach(function (p) { if (p[1].offsetTop <= y) cur = p[0]; });
+    links.forEach(function (a) { a.classList.toggle("active", a === cur); });
+  }
+
+  // Scroll progress bar
+  var bar = document.getElementById("progress");
+  window.addEventListener("scroll", function () {
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (h > 0 ? window.scrollY / h * 100 : 0) + "%";
+    spy();
+  }, { passive: true });
+  spy();
+
+  // Mouse spotlight and card tilt
+  if (!reduce && window.matchMedia("(pointer: fine)").matches) {
+    document.addEventListener("mousemove", function (e) {
+      document.body.style.setProperty("--mx", e.clientX + "px");
+      document.body.style.setProperty("--my", e.clientY + "px");
+    });
+    document.querySelectorAll(".card").forEach(function (c) {
+      c.addEventListener("mousemove", function (e) {
+        var r = c.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top;
+        c.style.setProperty("--cx", x + "px"); c.style.setProperty("--cy", y + "px");
+        if (c.classList.contains("tilt")) {
+          c.style.setProperty("--ry", ((x / r.width - .5) * 8) + "deg");
+          c.style.setProperty("--rx", ((.5 - y / r.height) * 8) + "deg");
+        }
+      });
+      c.addEventListener("mouseleave", function () { c.style.setProperty("--rx", "0deg"); c.style.setProperty("--ry", "0deg"); });
+    });
+  }
+})();
+</script>
+</body>
+</html>
